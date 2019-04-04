@@ -89,9 +89,9 @@ function getCordovaConfigParser(configFilePath) {
   // If we are running Cordova 5.4 or abova - use parser from cordova-common.
   // Otherwise - from cordova-lib.
   try {
-    ConfigParser = context.requireCordovaModule('cordova-common/src/ConfigParser/ConfigParser');
+    ConfigParser = require('cordova-common/src/ConfigParser/ConfigParser');
   } catch (e) {
-    ConfigParser = context.requireCordovaModule('cordova-lib/src/configparser/ConfigParser')
+    ConfigParser = require('cordova-lib/src/configparser/ConfigParser')
   }
 
   return new ConfigParser(configFilePath);
